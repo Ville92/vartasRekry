@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Tehtävä 1";
+}
+
+<div class="jumbotron">
+    <h1>Vartas rekrytointitehtävä - Ville Aho</h1>
+    <p class="lead">Tämä sivu on minun palautukseni rekrytointitehtävään.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Taulukko</h2>
+        <table id="taulukko">
+            <tr>
+                <td>Otsikko 1</td>
+                <td>Otsikko 2</td>
+                <td>Otsikko 3</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+            </tr>
+            <tr>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+                <td>Lorem ipsum</td>
+            </tr>
+            
+            <tr>
+                <td colspan="3" id="rivit"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h2>Lomake</h2>
+        <form>
+            <select>
+                <option value="ensimmäinenValinta">Ensimmäinen valinta</option>
+                <option value="toinenValinta">Toinen valinta</option>
+                <option value="kolmasValinta">Kolmas valinta</option>
+                <option value="neljasValinta">Neljäs valinta</option>
+            </select>
+            <input class="tekstikentta" type="text" placeholder="Tekstiä" />
+
+            <p class="radio-header">Valitse yksi</p>
+            <div class="radio">
+                <p><input type="radio" name="valinnat" value="ensimmäinen" /> Vaihtoehto 1</p>
+                <p><input type="radio" name="valinnat" value="toinen" /> Vaihtoehto 2</p>
+                <p><input type="radio" name="valinnat" value="kolmas" /> Vaihtoehto 3</p>
+                <p><input type="radio" name="valinnat" value="neljas" /> Vaihtoehto 4</p>
+            </div>
+
+            <input class="nappi" type="submit" />
+        </form>
+    </div>
+</div>
+
+<script>
+    //Rivimäärä taulukkoon
+    var rivimaara = document.getElementById("taulukko").rows.length -2;
+    document.getElementById("rivit").innerHTML = "Rivimäärä - " + rivimaara;
+</script>

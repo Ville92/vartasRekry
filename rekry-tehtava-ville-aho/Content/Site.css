@@ -1,0 +1,133 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: #FCFFF5;
+    color: #303030;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+}
+
+p, td, input, select {
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: blue;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-brand:hover {
+    color: #3498DB;
+}
+
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+}
+
+.jumbotron {
+    background: #2C3E50;
+    border-radius: 0;
+    color: #ffffff;
+}
+
+.container .jumbotron {
+    border-radius: 0;
+}
+
+.navbar-inverse {
+    border: 0;
+}
+
+/*
+    TAULUKKO
+*/
+table {
+    width: 100%;
+    border-radius: 10px;
+}
+
+td {
+    padding: 5px 10px;
+    color: #193441;
+    border: 2px solid #dddddd;
+}
+
+tr:last-of-type, tr:first-of-type {
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background: #eeeeee;
+}
+
+tr:nth-child(odd) {
+    background: #FCFFF5;
+}
+
+/*
+    LOMAKE
+*/
+
+select {
+    display: block;
+    margin: 5px 0;
+    padding: 5px 10px;
+    border: 2px solid #dddddd;
+    width: 100%;
+    max-width: 100%;
+}
+
+.tekstikentta {
+    padding: 5px 10px;
+    border: 2px solid #dddddd;
+    width: 100%;
+    max-width: 100%;
+    margin: 5px 0;
+}
+
+.nappi {
+    float: right;
+    background: #2C3E50;
+    color: #ffffff;
+    -webkit-appearance: none;
+    border: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid #2C3E50;
+}
+
+.nappi:hover {
+    background: none;
+    color: #2C3E50;
+}
+
+.radio {
+    margin: 10px 0;
+}
+
+.radio-header {
+    margin-top: 20px;
+    font-weight¨: bold;
+}
