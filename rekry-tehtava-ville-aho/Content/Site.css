@@ -22,7 +22,7 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    /*max-width: 280px;*/
 }
 
 h1, h2, h3, h4 {
@@ -62,19 +62,25 @@ a {
 /*
     TAULUKKO
 */
+
+legend {
+    border: 0;
+}
+
 table {
     width: 100%;
     border-radius: 10px;
+}
+
+th {
+    font-weight: bold;
+    border: 2px solid #dddddd;
 }
 
 td {
     padding: 5px 10px;
     color: #193441;
     border: 2px solid #dddddd;
-}
-
-tr:last-of-type, tr:first-of-type {
-    font-weight: bold;
 }
 
 tr:nth-child(even) {
@@ -89,24 +95,21 @@ tr:nth-child(odd) {
     LOMAKE
 */
 
-select {
-    display: block;
-    margin: 5px 0;
-    padding: 5px 10px;
-    border: 2px solid #dddddd;
-    width: 100%;
-    max-width: 100%;
+form fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
-.tekstikentta {
-    padding: 5px 10px;
-    border: 2px solid #dddddd;
-    width: 100%;
-    max-width: 100%;
-    margin: 5px 0;
+form p {
+    margin: 0;
 }
 
-.nappi {
+fieldset select, fieldset input[type='text'] {
+    border: 2px solid #dddddd;
+}
+
+fieldset .nappi {
     float: right;
     background: #2C3E50;
     color: #ffffff;
@@ -118,16 +121,11 @@ select {
     border: 2px solid #2C3E50;
 }
 
-.nappi:hover {
-    background: none;
-    color: #2C3E50;
+fieldset .nappi:hover {
+    background: #ffffff;
+    color: #2c3e50;
 }
 
-.radio {
-    margin: 10px 0;
-}
-
-.radio-header {
-    margin-top: 20px;
-    font-weight¨: bold;
+.jumbotron {
+    padding: 70px;
 }

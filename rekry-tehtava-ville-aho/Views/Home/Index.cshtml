@@ -11,67 +11,81 @@
     <div class="col-md-6">
         <h2>Taulukko</h2>
         <table id="taulukko">
-            <tr>
-                <td>Otsikko 1</td>
-                <td>Otsikko 2</td>
-                <td>Otsikko 3</td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-            </tr>
-            <tr>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-                <td>Lorem ipsum</td>
-            </tr>
-            
-            <tr>
-                <td colspan="3" id="rivit"></td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Otsikko 1</th>
+                    <th>Otsikko 2</th>
+                    <th>Otsikko 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                    <td>Lorem ipsum</td>
+                </tr>
+                <tr>
+                    <td colspan="3" id="rivit"></td>
+                </tr>
+            </tbody>
         </table>
     </div>
     <div class="col-md-6">
-        <h2>Lomake</h2>
+       <h2>Lomake</h2>
         <form>
-            <select>
-                <option value="ensimmäinenValinta">Ensimmäinen valinta</option>
-                <option value="toinenValinta">Toinen valinta</option>
-                <option value="kolmasValinta">Kolmas valinta</option>
-                <option value="neljasValinta">Neljäs valinta</option>
-            </select>
-            <input class="tekstikentta" type="text" placeholder="Tekstiä" />
+            <fieldset>
+                <div class="row">
+                    <div class="large-8 columns">
+                        <select>
+                            <option value="ensimmäinenValinta">Ensimmäinen valinta</option>
+                            <option value="toinenValinta">Toinen valinta</option>
+                            <option value="kolmasValinta">Kolmas valinta</option>
+                            <option value="neljasValinta">Neljäs valinta</option>
+                        </select>
+                    </div>
+                </div>
 
-            <p class="radio-header">Valitse yksi</p>
-            <div class="radio">
-                <p><input type="radio" name="valinnat" value="ensimmäinen" /> Vaihtoehto 1</p>
-                <p><input type="radio" name="valinnat" value="toinen" /> Vaihtoehto 2</p>
-                <p><input type="radio" name="valinnat" value="kolmas" /> Vaihtoehto 3</p>
-                <p><input type="radio" name="valinnat" value="neljas" /> Vaihtoehto 4</p>
-            </div>
+                <div class="row">
+                    <div class="large-8 columns">
+                        <input type="text" placeholder="Tekstiä">
+                    </div>
+                </div>
 
-            <input class="nappi" type="submit" />
+                <div class="row">
+                    <div class="large-8 columns">
+                        <p><input type="radio" name="valinnat" value="ensimmäinen" /> Vaihtoehto 1</p>
+                        <p><input type="radio" name="valinnat" value="toinen" /> Vaihtoehto 2</p>
+                        <p><input type="radio" name="valinnat" value="kolmas" /> Vaihtoehto 3</p>
+                        <p><input type="radio" name="valinnat" value="neljas" /> Vaihtoehto 4</p>
+                    </div>
+                </div>
+                <input type="button" class="button nappi" value="Lähetä" />
+            </fieldset>
         </form>
     </div>
 </div>

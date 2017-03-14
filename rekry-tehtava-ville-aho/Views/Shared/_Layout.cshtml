@@ -8,37 +8,89 @@
     @Scripts.Render("~/bundles/modernizr")
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/Content/foundation.css">
+    <script src="/Scripts/vendor/modernizr.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Rekrytehtävä", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    <div class="fixed">
+        <nav class="top-bar" data-topbar="">
+            <ul class="title-area">
+                <!-- Title Area -->
+                <li class="name">
+                    <h1>
+                        <a href="#">
+                            Rekry - Ville Aho
+                        </a>
+                    </h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+            </ul>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+            <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                    <li class="divider"></li>
+                    <li class="has-dropdown not-click">
+                        <a href="#">Navigaatio</a>
+                        <ul class="dropdown">
+                            <li class="title back js-generated"><h5><a href="javascript:void(0)">Takaisin</a></h5></li>
+                            <li class="parent-link hide-for-medium-up"><a class="parent-link js-generated" href="#">1 taso</a></li>
+                            <li><label>Ryhmä</label></li>
+                            <li class="has-dropdown not-click">
+                                <a href="#" class="">1 taso</a>
+                                <ul class="dropdown">
+                                    <li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+                                    <li class="parent-link hide-for-medium-up"><a class="parent-link js-generated" href="#">2 taso</a></li>
+                                    <li class="has-dropdown not-click">
+                                        <a href="#" class="">2 taso</a>
+                                        <ul class="dropdown">
+                                            <li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+                                            <li class="parent-link hide-for-medium-up"><a class="parent-link js-generated" href="#">2 taso</a></li>
+                                            <li><a href="#">3 taso</a></li>
+                                            <li><a href="#">3 taso</a></li>
+                                            <li><a href="#">3 taso</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">2 taso</a></li>
+                                    <li><a href="#">2 taso</a></li>
+                                    <li><a href="#">2 taso</a></li>
+                                    <li class="divider"></li>
+                                    <li><label>Ryhmä</label></li>
+                                    <li><a href="#">2 taso</a></li>
+                                    <li><a href="#">2 taso</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">1 taso</a></li>
+                            <li><a href="#">1 taso</a></li>
+                            <li class="divider"></li>
+                            <li><label>Ryhmä</label></li>
+                            <li><a href="#">1 taso</a></li>
+                            <li><a href="#">1 taso</a></li>
+                            <li><a href="#">1 taso</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+
+        <script src="/Scripts/vendor/jquery.js"></script>
+        <script src="/Scripts/vendor/fastclick.js"></script>
+        <script src="/js/foundation.js"></script>
+        <script>
+            $(document).foundation();
+        </script>
 </body>
 </html>
