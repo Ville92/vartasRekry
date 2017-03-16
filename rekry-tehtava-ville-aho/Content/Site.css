@@ -81,13 +81,14 @@ td {
     padding: 5px 10px;
     color: #193441;
     border: 2px solid #dddddd;
+    width: 33.33%
 }
 
-tr:nth-child(even) {
+#taulukko tr:nth-of-type(even) {
     background: #eeeeee;
 }
 
-tr:nth-child(odd) {
+#taulukko tr:nth-of-type(odd) {
     background: #FCFFF5;
 }
 
@@ -105,7 +106,7 @@ form p {
     margin: 0;
 }
 
-fieldset select, fieldset input[type='text'] {
+fieldset select, fieldset input[type='text'], body input:not([type]) {
     border: 2px solid #dddddd;
 }
 

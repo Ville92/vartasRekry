@@ -11,52 +11,12 @@
     <div class="col-md-6">
         <h2>Taulukko</h2>
         <table id="taulukko">
-            <thead>
-                <tr>
-                    <th>Otsikko 1</th>
-                    <th>Otsikko 2</th>
-                    <th>Otsikko 3</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                </tr>
-                <tr>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                </tr>
-                <tr>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                </tr>
-                <tr>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                </tr>
-                <tr>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                </tr>
-                <tr>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                    <td>Lorem ipsum</td>
-                </tr>
-                <tr>
-                    <td colspan="3" id="rivit"></td>
-                </tr>
-            </tbody>
-        </table>
+
+            </table>
+        <input id="filter" placeholder="Suodata tuloksia (Merkkikokoriippuvainen)">
     </div>
     <div class="col-md-6">
-       <h2>Lomake</h2>
+        <h2>Lomake</h2>
         <form>
             <fieldset>
                 <div class="row">
@@ -88,10 +48,61 @@
             </fieldset>
         </form>
     </div>
+
 </div>
 
+<p id="demo"></p>
+
+
 <script>
-    //Rivimäärä taulukkoon
-    var rivimaara = document.getElementById("taulukko").rows.length -2;
-    document.getElementById("rivit").innerHTML = "Rivimäärä - " + rivimaara;
+    //Taulukon rakentaminen ja datan hakeminen julkisesta API:sta
+    $(document).ready(function () {
+        $.getJSON('http://data.colorado.gov/resource/4ykn-tg5h.json', function (data) {
+            // begin accessing JSON data here
+            //console.log(data[0].agentfirstname);
+            var table1 = document.getElementById("taulukko");
+            var head = table1.createTHead(0);
+            var hrow = head.insertRow(0);
+            var hcell1 = hrow.insertCell(0);
+            var hcell2 = hrow.insertCell(1);
+            var hcell3 = hrow.insertCell(2);
+            hcell1.innerHTML = "Nimi"
+            hcell2.innerHTML = "Kaupunki"
+            hcell3.innerHTML = "Postinumero";
+            var body = table1.createTBody(1);
+            body.setAttribute("id", "tableBody");
+            var brow = body.insertRow(0);
+            for (var i = 0; i < 6; i++) {
+                var table = document.getElementById("taulukko");
+                var row = table.insertRow(2);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = data[i].agentfirstname;
+                cell2.innerHTML = data[i].agentprincipalcity;
+                cell3.innerHTML = data[i].agentprincipalzipcode;
+            }
+            var table = document.getElementById("taulukko");
+            var row = table.insertRow(8);
+            var cell1 = row.insertCell(0);
+            cell1.setAttribute("id", "rivit");
+            cell1.setAttribute("colspan", "3");
+            var rivimaara = document.getElementById("taulukko").rows.length - 3;
+            cell1.innerHTML = "Rivimäärä - " + rivimaara;
+        });
+    });
+
+</script>
+
+<script>
+    //Taulukon tulosten suodattaminen
+    $("#filter").keyup(function () {
+        var rows = $("#tableBody").find("tr").hide();
+        if (this.value.length) {
+            var data = this.value.split(" ");
+            $.each(data, function (i, v) {
+                rows.filter(":contains('" + v + "')").show();
+            });
+        } else rows.show();
+    });
 </script>
